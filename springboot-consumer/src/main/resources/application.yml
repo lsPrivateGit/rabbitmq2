@@ -1,0 +1,22 @@
+
+spring:
+  rabbitmq:
+    addresses: 193.112.214.43
+    username: guest
+    password: guest
+    connection-timeout: 15000
+    virtual-host: /
+      ##消费端配置
+    listener:
+      simple:
+        concurrency: 5
+        ##手工签收
+        acknowledge-mode: manual
+        max-concurrency: 10
+        ##限流
+        prefetch: 1
+
+server:
+  servlet:
+    context-path: /
+  port: 8002
