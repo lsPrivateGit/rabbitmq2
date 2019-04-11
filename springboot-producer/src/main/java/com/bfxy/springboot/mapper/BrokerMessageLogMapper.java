@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
 @Mapper
 public interface BrokerMessageLogMapper {
     long countByExample(BrokerMessageLogExample example);
@@ -32,6 +33,7 @@ public interface BrokerMessageLogMapper {
 
     int updateByPrimaryKey(BrokerMessageLog record);
 
+
     /**
      * 查询消息状态为0（发送中） 且已经超时的消息集合
      * @return
@@ -53,4 +55,6 @@ public interface BrokerMessageLogMapper {
      * @param updateTime
      */
     void changeBrokerMessageLogStatus(@Param("messageId")String messageId,@Param("status") String status,@Param("updateTime") Date updateTime);
+
+
 }

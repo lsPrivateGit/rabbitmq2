@@ -46,7 +46,7 @@ public class SpringbootProducerApplicationTests {
         properties.put("sendtime",new SimpleDateFormat("yyyy/mm/dd"));
 
         Order order = new Order();
-        order.setId("201808180000000001");
+        order.setId("201808180000000002");
         order.setName("测试订单1");
         order.setMessageId(System.currentTimeMillis()+"$"+ UUID.randomUUID().toString());
 
@@ -56,10 +56,9 @@ public class SpringbootProducerApplicationTests {
     @Test
     public void testCreateOrder()throws Exception{
         Order order = new Order();
-        order.setId("201808180000000002");
+        order.setId("201808180000000004");
         order.setName("测试订单2");
         order.setMessageId(System.currentTimeMillis()+"$"+ UUID.randomUUID().toString());
         orderService.createOrder(order);
-
     }
 }

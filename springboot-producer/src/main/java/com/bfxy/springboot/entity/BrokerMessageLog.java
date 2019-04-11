@@ -1,8 +1,10 @@
 package com.bfxy.springboot.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class BrokerMessageLog {
+public class BrokerMessageLog implements Serializable {
+    private static final long serialVersionUID = 6776756137801777128L;
     private String messageId;
 
     private String message;

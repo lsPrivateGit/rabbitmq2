@@ -18,7 +18,7 @@ import java.util.Map;
  */
 @Component
 public class orderReceiver {
-/*
+
     @RabbitListener(
             bindings = @QueueBinding(
                     value = @Queue(value = "order-queue2",durable = "true"),
@@ -38,8 +38,8 @@ public class orderReceiver {
         //ACK
         channel.basicAck(deliveryTag,false);
 
-    }*/
-    @RabbitListener(
+    }
+ /*   @RabbitListener(
             bindings = @QueueBinding(
                     value = @Queue(value = "order-queue3",durable = "true"),
                     exchange = @Exchange(value = "order-exchange3",durable = "ture",type = "topic"),
@@ -58,6 +58,6 @@ public class orderReceiver {
         //ACK
         channel.basicAck(deliveryTag,false);
 
-    }
+    }*/
 
 }

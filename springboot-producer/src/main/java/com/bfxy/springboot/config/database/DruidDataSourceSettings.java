@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
  * Created by linsong
  * 2018-10-13
  */
-@Component
+/*@Component
 @ConfigurationProperties(prefix = "spring.datasource")
-@PropertySource("classpath:druid.properties")
+@PropertySource("classpath:druid.properties")*/
 public class DruidDataSourceSettings {
-
+/*
     private String driverClassName;
     private String url;
     private String username;
@@ -30,6 +30,9 @@ public class DruidDataSourceSettings {
     @Value("${druid.maxActive}")
     private int maxActive;
 
+    @Value("druid.maxWait")
+    private int maxWait;
+
     @Value("${druid.timeBetweenEvictionRunsMillis}")
     private int timeBetweenEvictionRunsMillis;
 
@@ -39,8 +42,8 @@ public class DruidDataSourceSettings {
     @Value("${druid.validationQuery}")
     private String validationQuery;
 
-   /* @Value("${druid.testWhileIdle}")
-    private boolean testWhileIdle;*/
+    @Value("${druid.testWhileIdle}")
+    private boolean testWhileIdle;
 
     @Value("${druid.testOnBorrow}")
     private boolean testOnBorrow;
@@ -146,13 +149,13 @@ public class DruidDataSourceSettings {
         this.validationQuery = validationQuery;
     }
 
-   /* public boolean isTestWhileIdle() {
+    public boolean isTestWhileIdle() {
         return testWhileIdle;
     }
 
     public void setTestWhileIdle(boolean testWhileIdle) {
         this.testWhileIdle = testWhileIdle;
-    }*/
+    }
 
     public boolean isTestOnBorrow() {
         return testOnBorrow;
@@ -201,4 +204,12 @@ public class DruidDataSourceSettings {
     public void setConnectionProperties(String connectionProperties) {
         this.connectionProperties = connectionProperties;
     }
+
+    public int getMaxWait() {
+        return maxWait;
+    }
+
+    public void setMaxWait(int maxWait) {
+        this.maxWait = maxWait;
+    }*/
 }

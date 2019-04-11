@@ -19,11 +19,11 @@ import java.sql.SQLException;
  * Created by linsong
  * 2018-10-13
  */
-@Configuration
-@EnableTransactionManagement
+/*@Configuration
+@EnableTransactionManagement*/
 public class DruidDataSourceConfig {
 
-    private static Logger logger = LoggerFactory.getLogger(DruidDataSourceConfig.class);
+    /*private static Logger logger = LoggerFactory.getLogger(DruidDataSourceConfig.class);
 
     @Autowired
     private DruidDataSourceSettings druidDataSourceSettings;
@@ -46,10 +46,11 @@ public class DruidDataSourceConfig {
         ds.setInitialSize(druidDataSourceSettings.getInitialSize());
         ds.setMinIdle(druidDataSourceSettings.getMinIdle());
         ds.setMaxActive(druidDataSourceSettings.getMaxActive());
+        ds.setMaxWait(druidDataSourceSettings.getMaxActive());
         ds.setTimeBetweenEvictionRunsMillis(druidDataSourceSettings.getTimeBetweenEvictionRunsMillis());
         ds.setMinEvictableIdleTimeMillis(druidDataSourceSettings.getMinEvictableIdleTimeMillis());
         ds.setValidationQuery(druidDataSourceSettings.getValidationQuery());
-        //ds.setTestWhileIdle(druidDataSourceSettings.isTestWhileIdle());
+        ds.setTestWhileIdle(druidDataSourceSettings.isTestWhileIdle());
         ds.setTestOnBorrow(druidDataSourceSettings.isTestOnBorrow());
         ds.setTestOnReturn(druidDataSourceSettings.isTestOnReturn());
         ds.setPoolPreparedStatements(druidDataSourceSettings.isPoolPreparedStatements());
@@ -67,5 +68,5 @@ public class DruidDataSourceConfig {
         transactionManager.setDataSource(dataSource());
 
         return transactionManager;
-    }
+    }*/
 }

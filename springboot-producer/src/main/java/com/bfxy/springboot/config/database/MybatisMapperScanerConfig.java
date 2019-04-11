@@ -10,9 +10,10 @@ import tk.mybatis.spring.mapper.MapperScannerConfigurer;
  * 2018-10-13
  */
 
-@Configuration
-@AutoConfigureAfter(MybatisMapperScanerConfig.class)
+/*@Configuration
+@AutoConfigureAfter(MybatisMapperScanerConfig.class)*/
 public class MybatisMapperScanerConfig {
+/*
 
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer(){
@@ -21,5 +22,6 @@ public class MybatisMapperScanerConfig {
         mapperScannerConfigurer.setBasePackage("com.bfxy.springboot.mapper");
         return mapperScannerConfigurer;
     }
+*/
 
 }

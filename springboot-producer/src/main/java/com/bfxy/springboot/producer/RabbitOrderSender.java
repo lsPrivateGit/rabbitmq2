@@ -8,7 +8,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.print.DocFlavor;
 import java.util.Date;
 
 /**
@@ -36,6 +35,7 @@ public class RabbitOrderSender {
             if (ack){
                 //如果confim返回成功 则进行更新
                 brokerMessageLogMapper.changeBrokerMessageLogStatus(messageId,Constants.ORDER_SEND_SUCCESS,new Date());
+                System.out.println("消息发送成功！");
             } else {
                 //失败则进行具体的后续操作：重试或者补偿等手段
                 System.err.println("异常处理。。。");
@@ -45,7 +45,7 @@ public class RabbitOrderSender {
 
     //发送消息方法调用：构建自定义对象消息
     public void sendOrder(Order order) throws Exception{
-       // rabbitTemplate.setConfirmCallback(confirmCallback);
+        rabbitTemplate.setConfirmCallback(confirmCallback);
         //消息唯一ID
         CorrelationData correlationData = new CorrelationData(order.getMessageId());
         rabbitTemplate.convertAndSend("order-exchange3","order.ABC",order,correlationData);

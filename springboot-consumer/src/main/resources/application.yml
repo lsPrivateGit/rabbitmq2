@@ -19,4 +19,4 @@ spring:
 server:
   servlet:
     context-path: /
-  port: 8002
+  port: 8003

@@ -6,7 +6,6 @@ import com.bfxy.springboot.entity.Order;
 import com.bfxy.springboot.mapper.BrokerMessageLogMapper;
 import com.bfxy.springboot.producer.RabbitOrderSender;
 import com.bfxy.springboot.utils.FastJsonUtils;
-import com.sun.org.apache.xpath.internal.operations.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -30,7 +29,7 @@ public class RetryMessageTasker {
 
 
     //项目启动3秒钟每隔10秒抽取一次
-    @Scheduled(initialDelay = 3000,fixedDelay = 10000)
+   /* @Scheduled(initialDelay = 3000,fixedDelay = 10000)*/
     public void reSend(){
         System.err.println("------------------定时任务开始---------------");
         List<BrokerMessageLog> list = brokerMessageLogMapper.query4StatusAndTimeoutMessage();

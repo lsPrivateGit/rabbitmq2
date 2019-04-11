@@ -14,9 +14,9 @@ import javax.sql.DataSource;
  * Created by linsong
  * 2018-10-13
  */
-@Configuration
+/*@Configuration*/
 public class MybatisDataSourceConfig {
-
+/*
 
     @Autowired
     private DataSource dataSource;
@@ -44,5 +44,5 @@ public class MybatisDataSourceConfig {
            throw new RuntimeException(e);
         }
 
-    }
+    }*/
 }
