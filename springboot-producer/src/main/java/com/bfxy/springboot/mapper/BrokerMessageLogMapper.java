@@ -1,11 +1,10 @@
 package com.bfxy.springboot.mapper;
 
-import com.bfxy.springboot.entity.BrokerMessageLog;
-import com.bfxy.springboot.entity.BrokerMessageLogExample;
-
 import java.util.Date;
 import java.util.List;
 
+import com.bfxy.springboot.entity.BrokerMessageLog;
+import com.bfxy.springboot.entity.BrokerMessageLogExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/common-entity/common-entity.iml" filepath="$PROJECT_DIR$/common-entity/common-entity.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rabbitmq.iml" filepath="$PROJECT_DIR$/.idea/rabbitmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-consumer/springboot-consumer.iml" filepath="$PROJECT_DIR$/springboot-consumer/springboot-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-producer/springboot-producer.iml" filepath="$PROJECT_DIR$/springboot-producer/springboot-producer.iml" />

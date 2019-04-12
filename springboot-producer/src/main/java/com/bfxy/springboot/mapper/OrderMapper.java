@@ -1,12 +1,11 @@
 package com.bfxy.springboot.mapper;
 
-import com.bfxy.springboot.entity.Order;
-import com.bfxy.springboot.entity.OrderExample;
 import java.util.List;
 
+import com.bfxy.springboot.entity.Order;
+import com.bfxy.springboot.entity.OrderExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Component;
 
 @Mapper
 public interface OrderMapper {

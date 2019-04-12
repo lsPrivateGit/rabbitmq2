@@ -11,6 +11,7 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
@@ -34,6 +35,7 @@ public class OrderService {
 
 
 
+    @Transactional(rollbackFor = Exception.class)
     public void createOrder(Order order) throws Exception {
         //order current time
         Date orderTime = new Date();
@@ -43,14 +45,12 @@ public class OrderService {
         BrokerMessageLog brokerMessageLog = new BrokerMessageLog();
         brokerMessageLog.setMessageId(order.getMessageId());
         brokerMessageLog.setMessage(FastJsonUtils.convertObjectToJSON(order));
+        //brokerMessageLog.setTryCount(0);
         brokerMessageLog.setStatus("0");//设置订单的发送状态为0 表示发送中
         brokerMessageLog.setNextRetry(DateUtils.addMinutes(orderTime, Constants.ORDER_TIMEOUT));
         brokerMessageLog.setCreateTime(new Date());
         brokerMessageLog.setUpdateTime(new Date());
         brokerMessageLogMapper.insert(brokerMessageLog);
         rabbitOrderSender.sendOrder(order);
-
-
-
     }
 }

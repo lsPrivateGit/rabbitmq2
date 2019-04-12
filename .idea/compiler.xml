@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common-entity" />
         <module name="springboot-consumer" />
         <module name="springboot-producer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common-entity" target="1.8" />
       <module name="springboot-consumer" target="1.8" />
       <module name="springboot-producer" target="1.8" />
     </bytecodeTargetLevel>
