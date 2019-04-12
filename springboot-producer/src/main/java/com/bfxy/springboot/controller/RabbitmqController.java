@@ -1,6 +1,8 @@
 package com.bfxy.springboot.controller;
 
+import com.bfxy.springboot.domain.ResponseBo;
 import com.bfxy.springboot.entity.Order;
+import com.bfxy.springboot.exception.LimitAccessException;
 import com.bfxy.springboot.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +30,11 @@ public class RabbitmqController {
         order.setMessageId(System.currentTimeMillis()+"$"+ UUID.randomUUID().toString());
         orderService.createOrder(order);
         return "hh";
+    }
+
+    @RequestMapping("/exception")
+    public void testException(@RequestParam ("id") String id){
+        throw new LimitAccessException("接口访问异常~~~");
     }
 
 
