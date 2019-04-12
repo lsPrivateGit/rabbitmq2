@@ -48,7 +48,7 @@ public class RabbitOrderSender {
         rabbitTemplate.setConfirmCallback(confirmCallback);
         //消息唯一ID
         CorrelationData correlationData = new CorrelationData(order.getMessageId());
-        rabbitTemplate.convertAndSend("demo3","demo3.aaa",order,correlationData);
+        rabbitTemplate.convertAndSend("demo2","demo2.aaa",order,correlationData);
     }
 
 
