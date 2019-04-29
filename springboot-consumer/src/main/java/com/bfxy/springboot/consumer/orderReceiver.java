@@ -24,7 +24,7 @@ public class orderReceiver {
     private static int i = 1;
     @RabbitListener(
             bindings = @QueueBinding(
-                    value = @Queue(value = "demo2-queue",durable = "true"),
+                    value = @Queue(value = "demo2-queue2",durable = "true"),
                     exchange = @Exchange(value = "demo2",durable = "true",type = "topic"),
                     key = "demo2.#"
             )

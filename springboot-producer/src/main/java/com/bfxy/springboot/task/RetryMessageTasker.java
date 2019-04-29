@@ -30,7 +30,7 @@ public class RetryMessageTasker {
 
 
     //项目启动3秒钟每隔10秒抽取一次
-    @Scheduled(initialDelay = 3000,fixedDelay = 10000)
+   // @Scheduled(initialDelay = 3000,fixedDelay = 10000)
     @Transactional(rollbackFor = Exception.class)
     public void reSend(){
         System.err.println("------------------定时任务开始---------------");

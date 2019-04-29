@@ -47,7 +47,7 @@ public class OrderService {
         brokerMessageLog.setMessage(FastJsonUtils.convertObjectToJSON(order));
         brokerMessageLog.setTryCount(0);
         brokerMessageLog.setStatus("0");//设置订单的发送状态为0 表示发送中
-        brokerMessageLog.setNextRetry(DateUtils.addMinutes(orderTime, Constants.ORDER_TIMEOUT));
+        brokerMessageLog.setNextRetry(DateUtils.addMinutes(orderTime, Constants.ORDER_TIMEOUT));//下次执行时间当前时间加一分钟
         brokerMessageLog.setCreateTime(new Date());
         brokerMessageLog.setUpdateTime(new Date());
         brokerMessageLogMapper.insert(brokerMessageLog);
